@@ -96,6 +96,7 @@ button:active {
 }
 
 a {
+    cursor: pointer;
     color: #157EFB;
     text-decoration: none;
 }

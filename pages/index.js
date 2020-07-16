@@ -9,20 +9,31 @@ export default class Home extends Component {
         super(props)
         this.addButtonTapped = this.addButtonTapped.bind(this)
         this.subtractButtonTapped = this.subtractButtonTapped.bind(this)
+        this.resetAmount = this.resetAmount.bind(this)
+    }
+
+    state = {
+        amount: 0
     }
 
     addButtonTapped() {
-        console.log("Add button tapped")
+        var addAmount = prompt("How much did you spend just then?")
+        this.setState({amount: parseFloat(addAmount) + this.state.amount})
     }
 
     subtractButtonTapped() {
-        console.log("subtract button tapped")
+        var subtractAmount = prompt("How much money did you just received?")
+        this.setState({amount: this.state.amount - parseFloat(subtractAmount)})
+    }
+
+    resetAmount() {
+        this.setState({amount: 0})
     }
 
     render() {
         return (
             <Layout>
-                <Hero amount={23.30} />
+                <Hero amount={this.state.amount} onResetHandler={this.resetAmount}/>
 
                 <div className="button-wrapper">
                     <button type="button" onClick={this.addButtonTapped}>Add</button>
