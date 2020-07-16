@@ -1,1 +1,3 @@
-This is a starter template for [Learn Next.js](https://nextjs.org/learn).
+# Spendt - Spending tracker in React for the web
+
+I made this as a case study to improve my react skill. It is a simple web app that basically stores the amount of spending you've done.
