@@ -97,16 +97,18 @@ button:active {
 
 a {
     cursor: pointer;
-    color: #157EFB;
+    color: #157efb;
     text-decoration: none;
 }
 
-a:hover {
-    text-decoration: underline;
+@media (hover: hover) {
+    a:hover {
+        text-decoration: underline;
+    }
 }
 
 a.active {
-    background-color: #F2F2F7;
+    background-color: #f2f2f7;
 }
 
 p {
