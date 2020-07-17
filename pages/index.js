@@ -1,5 +1,5 @@
-import Layout from "../components/Layout"
-import Hero from "../components/Hero"
+import Layout from '../components/Layout'
+import Hero from '../components/Hero'
 
 import React, { Component } from 'react'
 
@@ -18,22 +18,22 @@ export default class Home extends Component {
 
     addButtonTapped() {
         var addAmount = prompt("How much did you spend just then?")
-        this.setState({amount: parseFloat(addAmount) + this.state.amount})
+        this.setState({ amount: parseFloat(addAmount) + this.state.amount })
     }
 
     subtractButtonTapped() {
         var subtractAmount = prompt("How much money did you just received?")
-        this.setState({amount: this.state.amount - parseFloat(subtractAmount)})
+        this.setState({ amount: this.state.amount - parseFloat(subtractAmount) })
     }
 
     resetAmount() {
-        this.setState({amount: 0})
+        this.setState({ amount: 0 })
     }
 
     render() {
         return (
             <Layout>
-                <Hero amount={this.state.amount} onResetHandler={this.resetAmount}/>
+                <Hero amount={this.state.amount} onResetHandler={this.resetAmount} />
 
                 <div className="button-wrapper">
                     <button type="button" onClick={this.addButtonTapped}>Add</button>
