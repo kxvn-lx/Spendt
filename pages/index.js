@@ -62,7 +62,7 @@ export default class Home extends Component {
     render() {
         return (
             <Layout>
-                <Hero amount={this.state.amount} onResetHandler={this.resetAmount} />
+                <Hero amount={parseFloat(this.state.amount).toFixed(2)} onResetHandler={this.resetAmount} />
 
                 <div className="button-wrapper">
                     <button type="button" onClick={this.addButtonTapped}>
