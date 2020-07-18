@@ -1,5 +1,6 @@
 import Layout from '../components/Layout'
 import Hero from '../components/Hero'
+import validator from '../components/Validator'
 
 import React, { Component } from 'react'
 
@@ -16,18 +17,44 @@ export default class Home extends Component {
         amount: 0
     }
 
+    /**
+     * Triggered when the add button is pressed.
+     */
     addButtonTapped() {
         var addAmount = prompt("How much did you spend just then?")
-        this.setState({ amount: parseFloat(addAmount) + this.state.amount })
+        if (addAmount) {
+            if (validator(addAmount)) {
+                this.setState({ amount: parseFloat(addAmount) + parseFloat(this.state.amount) }, () =>
+                    localStorage.setItem('SpendtValue', this.state.amount)
+                )
+            }
+        }
     }
 
+    /**
+     * Triggered when the subtract button is pressed.
+     */
     subtractButtonTapped() {
         var subtractAmount = prompt("How much money did you just received?")
-        this.setState({ amount: this.state.amount - parseFloat(subtractAmount) })
+        if (subtractAmount) {
+            if (validator(subtractAmount)) {
+                this.setState({ amount: this.state.amount - parseFloat(subtractAmount) }, () =>
+                    localStorage.setItem('SpendtValue', this.state.amount)
+                )
+            }
+        }
     }
 
+    /**
+     * Reset the handler command.
+     */
     resetAmount() {
         this.setState({ amount: 0 })
+        localStorage.clear()
+    }
+
+    componentDidMount() {
+        this.setState({ amount: localStorage.getItem('SpendtValue') || 0 })
     }
 
     render() {

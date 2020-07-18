@@ -12,6 +12,10 @@ const About = () => (
             Originally, I wanted to make an iOS project for this. But since I wanted to improve my React skill,
             I decided to create this in React instead. A fun ride indeed!
         </p>
+
+        <p>
+            This proejct uses the basic react framework, and persist storage.
+        </p>
     </Layout>
 )
 
