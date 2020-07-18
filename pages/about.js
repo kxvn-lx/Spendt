@@ -14,7 +14,7 @@ const About = () => (
         </p>
 
         <p>
-            This proejct uses the basic react framework, and persist storage.
+            This project uses the basic react framework, and persist storage.
         </p>
     </Layout>
 )

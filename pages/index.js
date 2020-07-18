@@ -63,8 +63,14 @@ export default class Home extends Component {
                 <Hero amount={this.state.amount} onResetHandler={this.resetAmount} />
 
                 <div className="button-wrapper">
-                    <button type="button" onClick={this.addButtonTapped}>Add</button>
-                    <button type="button" onClick={this.subtractButtonTapped}>Subtract</button>
+                    <button type="button" onClick={this.addButtonTapped}>
+                        <i className="fa fa-plus"></i>
+                        <span>Add</span>
+                    </button>
+                    <button type="button" onClick={this.subtractButtonTapped}>
+                        <i className="fa fa-minus"></i>
+                        <span>Subtract</span>
+                    </button>
                 </div>
 
                 <style jsx>{`
@@ -81,6 +87,10 @@ export default class Home extends Component {
                     button {
                         height: 7vh;
                         margin: 1em;
+                    }
+
+                    button > * {
+                        margin: 0 5px;
                     }
                 `}</style>
             </Layout>
