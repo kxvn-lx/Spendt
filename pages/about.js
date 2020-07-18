@@ -10,11 +10,11 @@ const About = () => (
 
         <p>
             Originally, I wanted to make an iOS project for this. But since I wanted to improve my React skill,
-            I decided to create this in React instead. A fun ride indeed!
+            I decided to create this in React instead. It uses NextJS framework and persist storage.
         </p>
 
         <p>
-            This project uses the basic react framework, and persist storage.
+            Created by Kevin Laminto | <a href="https://kevinweb.tech">www.kevinweb.tech</a>
         </p>
     </Layout>
 )
