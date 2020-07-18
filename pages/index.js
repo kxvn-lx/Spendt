@@ -49,8 +49,10 @@ export default class Home extends Component {
      * Reset the handler command.
      */
     resetAmount() {
-        this.setState({ amount: 0 })
-        localStorage.clear()
+        if (window.confirm("Do you wish to reset the value?")) {
+            this.setState({ amount: 0 })
+            localStorage.clear()
+        }
     }
 
     componentDidMount() {
