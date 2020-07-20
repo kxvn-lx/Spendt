@@ -27,6 +27,8 @@ export default class Home extends Component {
                 this.setState({ amount: parseFloat(addAmount) + parseFloat(this.state.amount) }, () =>
                     localStorage.setItem('SpendtValue', this.state.amount)
                 )
+            } else {
+                alert("Looks like you entered an invalid number, perhaps check it again? 🧐")
             }
         }
     }
@@ -41,6 +43,8 @@ export default class Home extends Component {
                 this.setState({ amount: this.state.amount - parseFloat(subtractAmount) }, () =>
                     localStorage.setItem('SpendtValue', this.state.amount)
                 )
+            } else {
+                alert("Looks like you entered an invalid number, perhaps check it again? 🧐")
             }
         }
     }
@@ -49,7 +53,7 @@ export default class Home extends Component {
      * Reset the handler command.
      */
     resetAmount() {
-        if (window.confirm("Do you wish to reset the value?")) {
+        if (window.confirm("Do you wish to reset the amount?")) {
             this.setState({ amount: 0 })
             localStorage.clear()
         }
